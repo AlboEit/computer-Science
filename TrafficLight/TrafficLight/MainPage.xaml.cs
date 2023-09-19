@@ -26,5 +26,43 @@ namespace TrafficLight
         {
             this.InitializeComponent();
         }
+
+        private void btnManual_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the current color of the traffic light
+            SolidColorBrush redBrush = new SolidColorBrush(Windows.UI.Colors.DarkRed);
+            SolidColorBrush yellowBrush = new SolidColorBrush(Windows.UI.Colors.Yellow);
+            SolidColorBrush greenBrush = new SolidColorBrush(Windows.UI.Colors.Green);
+
+            SolidColorBrush currentRedBrush = (SolidColorBrush)elpRed.Fill;
+            SolidColorBrush currentYellowBrush = (SolidColorBrush)elpYellow.Fill;
+            SolidColorBrush currentGreenBrush = (SolidColorBrush)elpGreen.Fill;
+
+            if (currentRedBrush.Color == redBrush.Color)
+            {
+                // Change to yellow
+                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Yellow);
+                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+            }
+            else if (currentYellowBrush.Color == yellowBrush.Color)
+            {
+                // Change to green
+                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Green);
+            }
+            else
+            {
+                // Change back to red
+                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.DarkRed);
+                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
+            }
+        }
+        private void btnAuto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
