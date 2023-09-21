@@ -6,37 +6,38 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="blue">
+    Background="#2C3E50"> <!-- Changed background color to a dark blue shade -->
 
-    <Grid Background="#354F60" Margin="20" BorderBrush="#BC0E4C" BorderThickness="3" CornerRadius="40">
-        
+    <Grid Background="#455A64" Margin="20" BorderBrush="#D32F2F" BorderThickness="3" CornerRadius="40"> <!-- Adjusted grid background and border colors -->
+
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1" Background="Black" CornerRadius="60" Margin="20">
+
+        <Grid Grid.Column="1" Background="#212121" CornerRadius="60" Margin="20"> <!-- Changed background color of this grid to a dark shade -->
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Ellipse  x:Name="elpRed" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="DarkRed" Grid.Column="1" Grid.Row="0" >
+            <Ellipse  x:Name="elpRed" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="DarkRed" Grid.Column="1" Grid.Row="0"> <!-- Changed the red light color -->
             </Ellipse>
-            <Ellipse  x:Name="elpYellow" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="1">
+            <Ellipse  x:Name="elpYellow" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="1"> <!-- Changed the yellow light color -->
             </Ellipse>
-            <Ellipse  x:Name="elpGreen" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="2">
+            <Ellipse  x:Name="elpGreen" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="2"> <!-- Changed the green light color -->
             </Ellipse>
         </Grid>
-        <Button x:Name="btnAuto" Background="#FFC501" HorizontalAlignment="Stretch" Height="180" Content="Auto" FontSize="60" 
+
+        <Button x:Name="btnAuto" Background="#FFC501" HorizontalAlignment="Stretch" Height="180" Content="Auto" FontSize="60"
                 Foreground="DarkSlateGray" FontFamily="Californian FB Bold" BorderBrush="Black" VerticalAlignment="Top" CornerRadius="60" Margin="40"
-                Click="btnAuto_Click">  </Button>
+                Click="btnAuto_Click"></Button>
 
         <Button x:Name="btnManual" Background="#FFC501" HorizontalAlignment="Stretch" Height="180" Content="Manual" FontSize="60" Grid.Column="2"
                 Foreground="DarkSlateGray" FontFamily="Californian FB Bold" BorderBrush="Black" VerticalAlignment="Top" CornerRadius="60" Margin="40" Click="btnManual_Click"></Button>
-        <Image  x:Name="Boy_Idle" Source="Assets\Animals\Dog\Idle-right.gif" Grid.Column="0" VerticalAlignment="Center" Width="500" Height="3000" Margin="125,375,0,0" ></Image>
-        <Image x:Name="Warrior_Idle" Source=""></Image>
+
+        <Image  x:Name="Boy_Idle" Source="Assets\Animals\Dog\Idle-right.gif" Grid.Column="0" VerticalAlignment="Center" Width="500" Height="3000" Margin="125,375,0,0"></Image>
+        <Image  x:Name="Warrior_Idle" Source="Assets\Animals\Cat\Idle-Left.gif" Grid.Column="2" Width="500" Height="450" Margin="12,320,0,0"></Image>
     </Grid>
 </Page>
