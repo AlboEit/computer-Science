@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
+using TrafficLights.Objects;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,6 +28,7 @@ namespace TrafficLight
         private SolidColorBrush yellowBrush;
         private SolidColorBrush greenBrush;
         private int currentLightIndex;
+        private  TrafficL _trafficlight;
         public MainPage()
         {
             this.InitializeComponent();
@@ -39,49 +41,17 @@ namespace TrafficLight
 
         private void btnManual_Click(object sender, RoutedEventArgs e)
         {
-            // Get the current color of the traffic light
-            SolidColorBrush redBrush = new SolidColorBrush(Windows.UI.Colors.DarkRed);
-            SolidColorBrush yellowBrush = new SolidColorBrush(Windows.UI.Colors.Yellow);
-            SolidColorBrush greenBrush = new SolidColorBrush(Windows.UI.Colors.Green);
-
-            SolidColorBrush currentRedBrush = (SolidColorBrush)elpRed.Fill;
-            SolidColorBrush currentYellowBrush = (SolidColorBrush)elpYellow.Fill;
-            SolidColorBrush currentGreenBrush = (SolidColorBrush)elpGreen.Fill;
-
-            if (currentRedBrush.Color == redBrush.Color)
-            {
-                // Change to yellow
-                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Yellow);
-                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-            }
-            else if (currentYellowBrush.Color == yellowBrush.Color)
-            {
-                // Change to green
-                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Green);
-            }
-            else
-            {
-                // Change back to red
-                elpRed.Fill = new SolidColorBrush(Windows.UI.Colors.DarkRed);
-                elpYellow.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-                elpGreen.Fill = new SolidColorBrush(Windows.UI.Colors.Gray);
-            }
+            _trafficlight.SetState();
+            
         }
         private async void btnAuto_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Delay(3000);
-            SetLightColor(1);
-
-            // Change to green after 3 seconds
-            await Task.Delay(3000);
-            SetLightColor(2);
-
-            // Change back to red after 3 seconds
-            await Task.Delay(3000);
-            SetLightColor(0);
+            _trafficlight.IsAuto = !_trafficlight.IsAuto;
+            if (_trafficlight.IsAuto)//כך משנים כתוביות ללחצן
+                btnAuto.Content = "Stop";
+            else
+                btnAuto.Content = "Auto";
+            btnManual.IsEnabled = !_trafficlight.IsAuto;
         }
         private void SetLightColor(int lightIndex)
         {
@@ -107,7 +77,10 @@ namespace TrafficLight
             }
         }
 
-        // Other event handlers and methods can go here...
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _trafficlight = new TrafficL(elpRed, elpYellow, elpGreen);  
+        }
     }
 }
 

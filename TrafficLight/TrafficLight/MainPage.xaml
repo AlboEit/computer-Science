@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="#2C3E50"> <!-- Changed background color to a dark blue shade -->
+    Background="#2C3E50"
+    Loaded ="Page_Loaded">
 
     <Grid Background="#455A64" Margin="20" BorderBrush="#D32F2F" BorderThickness="3" CornerRadius="40"> <!-- Adjusted grid background and border colors -->
 
@@ -22,11 +23,11 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Ellipse  x:Name="elpRed" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="DarkRed" Grid.Column="1" Grid.Row="0"> <!-- Changed the red light color -->
+            <Ellipse  x:Name="elpRed" Height="180" Width="180" Stroke="Black" StrokeThickness="4" Fill="DarkRed" Grid.Column="1" Grid.Row="0"> <!-- Changed the red light color -->
             </Ellipse>
-            <Ellipse  x:Name="elpYellow" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="1"> <!-- Changed the yellow light color -->
+            <Ellipse  x:Name="elpYellow" Height="180" Width="180" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="1"> <!-- Changed the yellow light color -->
             </Ellipse>
-            <Ellipse  x:Name="elpGreen" Height="180" Width="280" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="2"> <!-- Changed the green light color -->
+            <Ellipse  x:Name="elpGreen" Height="180" Width="180" Stroke="Black" StrokeThickness="4" Fill="Gray" Grid.Column="1" Grid.Row="2"> <!-- Changed the green light color -->
             </Ellipse>
         </Grid>
 
