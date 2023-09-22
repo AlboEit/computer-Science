@@ -31,14 +31,14 @@
             </Ellipse>
         </Grid>
 
-        <Button x:Name="btnAuto" Background="#FFC501" HorizontalAlignment="Stretch" Height="180" Content="Auto" FontSize="60"
-                Foreground="DarkSlateGray" FontFamily="Californian FB Bold" BorderBrush="Black" VerticalAlignment="Top" CornerRadius="60" Margin="40"
+        <Button x:Name="btnAuto" Background="#FFC501" HorizontalAlignment="Stretch" Height="145" Content="Auto" FontSize="50"
+                Foreground="DarkSlateGray" FontFamily="Californian FB Bold" BorderBrush="Black" VerticalAlignment="Top" CornerRadius = "60" Margin="40"
                 Click="btnAuto_Click"></Button>
 
-        <Button x:Name="btnManual" Background="#FFC501" HorizontalAlignment="Stretch" Height="180" Content="Manual" FontSize="60" Grid.Column="2"
+        <Button x:Name="btnManual" Background="#FFC501" HorizontalAlignment="Stretch" Height="145" Content="Manual" FontSize="50" Grid.Column="2"
                 Foreground="DarkSlateGray" FontFamily="Californian FB Bold" BorderBrush="Black" VerticalAlignment="Top" CornerRadius="60" Margin="40" Click="btnManual_Click"></Button>
 
-        <Image  x:Name="Boy_Idle" Source="Assets\Animals\Dog\Idle-right.gif" Grid.Column="0" VerticalAlignment="Center" Width="500" Height="3000" Margin="125,375,0,0"></Image>
-        <Image  x:Name="Warrior_Idle" Source="Assets\Animals\Cat\Idle-Left.gif" Grid.Column="2" Width="500" Height="450" Margin="12,320,0,0"></Image>
+        <Image  x:Name="Boy_Idle" Source="Assets\Animals\Dog\Idle-right.gif" Grid.Column="0" VerticalAlignment="Center" Width="500" Height="350" Margin="125,375,0,0"></Image>
+        <Image  x:Name="Warrior_Idle" Source="Assets\Animals\Cat\Idle-Left.gif" Grid.Column="2" Width="500" Height="350" Margin="12,320,0,0"></Image>
     </Grid>
 </Page>
