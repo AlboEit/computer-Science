@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
 using TrafficLights.Objects;
+using TrafficLight.Objects;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -29,6 +30,8 @@ namespace TrafficLight
         private SolidColorBrush greenBrush;
         private int currentLightIndex;
         private  TrafficL _trafficlight;
+        private Boy _boy;
+        private Warrior _warrior;
         public MainPage()
         {
             this.InitializeComponent();
@@ -79,7 +82,9 @@ namespace TrafficLight
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _trafficlight = new TrafficL(elpRed, elpYellow, elpGreen);  
+            _trafficlight = new TrafficL(elpRed, elpYellow, elpGreen);
+            _boy = new Boy(Boy_Idle);
+            _warrior = new Warrior(Warrior_Idle);
         }
     }
 }
