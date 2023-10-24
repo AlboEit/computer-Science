@@ -20,7 +20,7 @@ namespace TrafficLight.Objects
 
         public Character(Image imageCharacter)
         {
-            CharacterState= CharacterStateType.standing;
+            _CharacterState= CharacterStateType.standing;
             _imageCharacter = imageCharacter;
             _bitmapImage = new BitmapImage();
             _imageCharacter.Source = _bitmapImage;
