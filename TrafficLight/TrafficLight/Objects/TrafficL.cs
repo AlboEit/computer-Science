@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrafficLight;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -82,6 +84,10 @@ namespace TrafficLights.Objects
                     _state = TrafficLightState.Red;
                     _elpRed.Fill = new SolidColorBrush(Colors.Red);
                     break;
+            }
+            if(Events.OnChangeState!=null)//if the event is happening 
+            {
+                Events.OnChangeState(_state);//starting the event
             }
         }
         /// <summary>
