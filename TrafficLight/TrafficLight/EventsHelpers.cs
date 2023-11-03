@@ -9,5 +9,4 @@ using static TrafficLights.Objects.TrafficL;
 internal static class EventsHelpers
 {
     public static Action<TrafficLightState> OnChangeState;
-        public static Action<TrafficLightState> OnChangeState;
 }

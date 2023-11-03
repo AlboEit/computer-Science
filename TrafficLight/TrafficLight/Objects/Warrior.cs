@@ -26,7 +26,7 @@ namespace TrafficLight.Objects
                     _bitmapImage.UriSource = new Uri("ms-appx:///Assets/Animals/Cat/Jump-Left.gif");
                     break;
                 case CharacterStateType.going:
-                    _bitmapImage.UriSource = new Uri("ms-appx:///Assets/Animals/Cat/Run-Left.gif");
+                    _bitmapImage.UriSource = new Uri("ms-appx:///Assets/Animals/Cat/Run_Left.gif");
                     break;
             }
         }
