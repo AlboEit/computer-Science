@@ -130,6 +130,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BackgroundImage.jpg" />
     <Content Include="Assets\Buttons\Back %281%29.png" />
     <Content Include="Assets\Buttons\Back %282%29.png" />
     <Content Include="Assets\Buttons\Back %283%29.png" />

@@ -5,8 +5,7 @@
     xmlns:local="using:Arcanoid"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="Black">
+    mc:Ignorable="d">
     
 
     <Page.Resources>
@@ -32,9 +31,11 @@
             </Setter>
         </Style>
     </Page.Resources>
-   
+       
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions >
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -63,7 +64,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-
+        
         </Grid.ColumnDefinitions>
         <Button x:Name="btnExit" Width="100" Height="400" Grid.Column="14" Grid.Row="0" Background="Black" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Style="{StaticResource NoPointerHoverButtonStyle}" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png"></Image>
