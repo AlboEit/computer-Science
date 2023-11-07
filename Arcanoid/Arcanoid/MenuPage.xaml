@@ -6,13 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
 
     <Page.Resources>
-        <!-- Define a custom ButtonStyle without pointer hover effects -->
-        <Style x:Key="NoPointerHoverButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Black" />
-            <Setter Property="BorderBrush" Value="Black" />
+        <Style x:Key="ResponsiveButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -22,66 +20,71 @@
                                 x:Name="ContentPresenter"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}"
-                                Width="89" 
-                                Height="400"
-                                />
+                            />
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Page.Resources>
-       
+
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg" />
         </Grid.Background>
-        <Grid.RowDefinitions >
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+        <!-- Overlay PNG image -->
+            
+
+
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnExit" Width="100" Height="400" Grid.Column="14" Grid.Row="0" Background="Black" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Style="{StaticResource NoPointerHoverButtonStyle}" >
+        
+
+        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png"></Image>
         </Button>
-        <!-- Add similar event handlers and unique Image names for other buttons -->
 
-        <Button x:Name="btnOptions" Width="100" Height="400" Background="Black" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Style="{StaticResource NoPointerHoverButtonStyle}">
+        <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Options (1).png"></Image>
         </Button>
-        <!-- New Play button -->
-        <Button x:Name="btnPlay" Width="100" Height="400" Background="Black" Grid.Column="7" Grid.Row="5" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited"  Style="{StaticResource NoPointerHoverButtonStyle}">
+        <Button x:Name="btnShop" Grid.Column="1" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+            <Image Source="/Assets/Buttons/Shop (1).png"></Image>
+        </Button>
+
+        <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Play (1).png"></Image>
         </Button>
-        <!-- New Help button -->
-        <Button x:Name="btnHelp" Width="100" Height="400" Background="Black" Grid.Column="7" Grid.Row="6" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited"  Style="{StaticResource NoPointerHoverButtonStyle}">
+
+        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="5" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Help (1).png"></Image>
         </Button>
-        
+
     </Grid>
 </Page>

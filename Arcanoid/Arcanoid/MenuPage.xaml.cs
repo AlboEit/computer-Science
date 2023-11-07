@@ -55,6 +55,10 @@ namespace Arcanoid
             }
         }
 
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 
 

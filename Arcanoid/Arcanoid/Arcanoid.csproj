@@ -308,6 +308,7 @@
     <Content Include="Assets\Buttons\Upload %282%29.png" />
     <Content Include="Assets\Buttons\Upload %283%29.png" />
     <Content Include="Assets\Buttons\Upload %284%29.png" />
+    <Content Include="GameManPageLogo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
