@@ -37,6 +37,7 @@ namespace Arcanoid
                 if (image != null)
                 {
                     image.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Buttons/{imageName} (2).png"));
+                    Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Hand, 1);
                 }
             }
         }
@@ -51,6 +52,7 @@ namespace Arcanoid
                 if (image != null)
                 {
                     image.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Buttons/{imageName} (1).png"));
+                    Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
                 }
             }
         }

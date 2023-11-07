@@ -67,22 +67,22 @@
         </Grid.ColumnDefinitions>
         
 
-        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" >
-            <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png"></Image>
+        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" >
+            <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>
         </Button>
 
-        <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Options (1).png"></Image>
         </Button>
-        <Button x:Name="btnShop" Grid.Column="1" Grid.Row="0" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnShop" Grid.Column="1" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Shop (1).png"></Image>
         </Button>
 
-        <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Play (1).png"></Image>
         </Button>
 
-        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="5" Style="{StaticResource ResponsiveButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Help (1).png"></Image>
         </Button>
 
