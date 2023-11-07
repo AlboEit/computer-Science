@@ -32,7 +32,7 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg" />
         </Grid.Background>
-        <!-- Overlay PNG image -->
+        
             
 
 
