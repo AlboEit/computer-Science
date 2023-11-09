@@ -67,7 +67,7 @@
         </Grid.ColumnDefinitions>
         
 
-        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" >
+        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>
         </Button>
 
@@ -102,15 +102,18 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock  TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="1"  FontSize="30" FontFamily="Comic Sans MS" FontStyle="Italic" Foreground="Black" >
- <Bold>are you sure you want to leave?</Bold>
-                    </TextBlock>
+
+                    <Viewbox  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="1"  >
+                        <TextBlock  TextWrapping="Wrap" FontSize="30" FontFamily="Comic Sans MS" FontStyle="Italic" Foreground="Black" >
+                            <Bold>are you sure you want to leave?</Bold>
+                        </TextBlock>
+                    </Viewbox>
 
                     <Button x:Name="btnCross" Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnReturnClick">
-                        <Image x:Name="imgCross" Source="Assets\Buttons\Cross (1).png" />
+                        <Image x:Name="imgCross" Source="/Assets\Buttons\Cross (1).png" />
                     </Button>
                     <Button x:Name="btnCheck" Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnQuitClick">
-                        <Image x:Name="imgCheck" Source="Assets\Buttons\Check (1).png" />
+                        <Image x:Name="imgCheck" Source="/Assets\Buttons\Check (1).png" />
                     </Button>
                 </Grid>
             </Grid>
