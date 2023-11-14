@@ -44,7 +44,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Page x:Name="LogInPopUp" Grid.Column="2" Opacity="0.5" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="6" Visibility="Visible">
+        <Page x:Name="LogInPopUp" Grid.Column="2" Opacity="0.9" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="6" Visibility="Visible">
             <Grid Background="DarkGray" CornerRadius="30" BorderThickness="5"  BorderBrush="Black"  >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -88,7 +88,9 @@
                 <Button Grid.Row="3" Grid.Column="5" Content="Sign Up"  Grid.ColumnSpan="3" Grid.RowSpan="1"  Margin="10" Height="50" Width="250"/>
             </Grid>
         </Page>
-
+        <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
+            <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>
+        </Button>
     </Grid>
 </Page>
 

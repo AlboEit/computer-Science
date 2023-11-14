@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arcanoid.Pages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -71,6 +72,10 @@ namespace Arcanoid
             Application.Current.Exit();
         }
 
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SignInUpPage));
+        }
     }
     
 

@@ -81,8 +81,10 @@
         <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Play (1).png"></Image>
         </Button>
-
-        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnProfile" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnProfile_Click">
+            <Image Source="/Assets/Buttons/Profile (1).png"></Image>
+        </Button>
+        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="6" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Help (1).png"></Image>
         </Button>
         <Page x:Name="ExitPopUp" Grid.Column="5" Opacity="0.8" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="5" Visibility="Collapsed">

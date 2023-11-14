@@ -20,5 +20,6 @@ namespace Arcanoid
             // Close the confirmation window and return to the MenuPage
             Frame.GoBack();
         }
+       
     }
 }
