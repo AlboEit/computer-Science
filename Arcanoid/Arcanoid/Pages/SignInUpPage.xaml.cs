@@ -60,5 +60,18 @@ namespace Arcanoid.Pages
         {
             Frame.Navigate(typeof(MenuPage));
         }
+
+        private void HaveAccount_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            SignupPopUp.Visibility = Visibility.Collapsed;
+            LogInPopUp.Visibility = Visibility.Visible;
+        }
+
+        private void SignUp_Click(object sender, RoutedEventArgs e)
+        {
+            SignupPopUp.Visibility = Visibility.Visible;
+            LogInPopUp.Visibility=Visibility.Collapsed;
+
+        }
     }
 }
