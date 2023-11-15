@@ -80,7 +80,9 @@
         <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>
         </Button>
-
+        
+        <TextBlock x:Name="textBlock" Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="7" FontSize="20"/>
+        
         <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Options (1).png"></Image>
         </Button>
@@ -91,11 +93,14 @@
         <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Play (1).png"></Image>
         </Button>
-        <Button x:Name="btnProfile" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnProfile_Click">
+        <Button x:Name="btnProfile" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited"  Click="btnProfile_Click">
             <Image Source="/Assets/Buttons/Profile (1).png"></Image>
         </Button>
-        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="6" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="7" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
             <Image Source="/Assets/Buttons/Help (1).png"></Image>
+        </Button>
+        <Button x:Name="btnLevelList" Grid.Column="7" Grid.Row="6" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnLevelList_Click">
+            <Image Source="/Assets/Buttons/LevelList (1).png"></Image>
         </Button>
         <Page x:Name="ExitPopUp" Grid.Column="5" Opacity="0.8" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="5" Visibility="Collapsed">
             <Grid>

@@ -169,6 +169,17 @@ namespace Arcanoid
                 }
             }
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // Check if the navigation parameter is a string
+            if (e.Parameter is string message)
+            {
+                // Do something with the received message
+                textBlock.Text =  message;
+            }
+        }
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             ExitPopUp.Visibility = Visibility.Visible;
@@ -187,6 +198,11 @@ namespace Arcanoid
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SignInUpPage));
+        }
+
+        private void btnLevelList_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LevelsPage));
         }
     }
 }

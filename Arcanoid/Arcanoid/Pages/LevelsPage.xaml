@@ -9,6 +9,44 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg" />
+        </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Image x:Name="img1" Source="/NumbersImages/1.png"  Grid.Column="2"  Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Tapped="Image_Tapped"> </Image>
+        <Image x:Name="img2" Source="/NumbersImages/2.png"  Grid.Column="5"  Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
+        <Image x:Name="img3" Source="/NumbersImages/3.png"  Grid.Column="8"  Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
+        <Image x:Name="img4" Source="/NumbersImages/4.png"  Grid.Column="11"  Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
     </Grid>
 </Page>

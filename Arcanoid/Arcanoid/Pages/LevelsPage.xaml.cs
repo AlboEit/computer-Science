@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel.Channels;
+using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +27,15 @@ namespace Arcanoid.Pages
         public LevelsPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (sender is Image tappedImage)
+            {
+                string strForMessage = tappedImage.Name.Substring(3);
+                Frame.Navigate(typeof(MenuPage), $"You are in level number {strForMessage}");
+            }
         }
     }
 }

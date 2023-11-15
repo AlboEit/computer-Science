@@ -369,6 +369,10 @@
     <Content Include="Assets\Buttons\Upload %283%29.png" />
     <Content Include="Assets\Buttons\Upload %284%29.png" />
     <Content Include="GameManPageLogo.png" />
+    <Content Include="NumbersImages\1.png" />
+    <Content Include="NumbersImages\2.png" />
+    <Content Include="NumbersImages\3.png" />
+    <Content Include="NumbersImages\4.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
