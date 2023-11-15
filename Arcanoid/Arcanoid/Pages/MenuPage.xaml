@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
+        
         <Style x:Key="ResponsiveButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="Transparent" />
@@ -27,8 +28,9 @@
             </Setter>
         </Style>
     </Page.Resources>
-    
-    <Grid>
+
+    <Grid  >
+        
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg" />
         </Grid.Background>
@@ -65,6 +67,14 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
+
+
+        <!--<Grid x:Name="VidGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" PointerMoved="OnPointerMoved" Grid.Row="0" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="15" Visibility="Collapsed" >-->
+        <!--<MediaElement x:Name="videoPlayer" Source="ms-appx:///911 GT2 RS _ Never Let Go Of Me (slowed, tiktok version) x NFS.mp4" AutoPlay="False" Visibility="Collapsed" Grid.Row="0" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="15" PointerMoved="OnPointerMoved"/>-->
+
+        <!--</Grid>-->
+
         
 
         <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
@@ -120,6 +130,5 @@
                 </Grid>
             </Grid>
         </Page>
-
     </Grid>
 </Page>

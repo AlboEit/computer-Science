@@ -139,6 +139,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="911 GT2 RS _ Never Let Go Of Me %28slowed, tiktok version%29 x NFS.mp4" />
     <Content Include="Assets\App\LargeTile.scale-100.png" />
     <Content Include="Assets\App\LargeTile.scale-125.png" />
     <Content Include="Assets\App\LargeTile.scale-150.png" />

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,10 +25,121 @@ namespace Arcanoid
     /// </summary>
     public partial class MenuPage : Page
     {
+        private MediaElement videoPlayer;
+        private DispatcherTimer timer;
+        private bool isUserActive;
+
         public MenuPage()
         {
             this.InitializeComponent();
+
+
+            // Initialize and start the timer
+
+            //InitializationTwoPointO();
+            //timer = new DispatcherTimer();
+            //timer.Interval = TimeSpan.FromSeconds(5);
+            //timer.Tick += Timer_Tick;
+            //timer.Start();
         }
+        //public void OnPointerMoved(object sender, PointerRoutedEventArgs e)
+        //{
+        //    // Reset the timer on mouse movement
+            
+        //    InitializationOfTimer();
+
+        //    if (!isUserActive)
+        //    {
+        //        // Show the buttons
+        //        btnExit.Visibility = Visibility.Visible;
+        //        btnOptions.Visibility = Visibility.Visible;
+        //        btnShop.Visibility = Visibility.Visible;
+        //        btnPlay.Visibility = Visibility.Visible;
+        //        btnProfile.Visibility = Visibility.Visible;
+        //        btnHelp.Visibility = Visibility.Visible;
+
+        //        // Stop the video playback
+        //        InitializationTwoPointO();
+        //        videoPlayer.Visibility = Visibility.Collapsed;
+
+        //        isUserActive = true;
+        //    }
+        //}
+
+
+        //private void Timer_Tick(object sender, object e)
+        //{
+        //    isUserActive = false;
+        //    timer.Stop();
+
+        //    if (!isUserActive)
+        //    {
+        //        // Show the video
+        //        videoPlayer.Visibility = Visibility.Visible;
+                
+
+        //        // Hide the buttons
+        //        btnExit.Visibility = Visibility.Collapsed;
+        //        btnOptions.Visibility = Visibility.Collapsed;
+        //        btnShop.Visibility = Visibility.Collapsed;
+        //        btnPlay.Visibility = Visibility.Collapsed;
+        //        btnProfile.Visibility = Visibility.Collapsed;
+        //        btnHelp.Visibility = Visibility.Collapsed;
+
+        //        // Play the video
+        //        videoPlayer.Play();
+        //    }
+            
+            
+        //}
+
+        //private void InitializationTwoPointO()
+        //{
+        //    videoPlayer = new MediaElement();
+        //    videoPlayer.AutoPlay = false;
+        //    videoPlayer.Visibility = Visibility.Collapsed;
+        //    videoPlayer.Source = new Uri("ms-appx:///911 GT2 RS _ Never Let Go Of Me (slowed, tiktok version) x NFS.mp4");
+        //}
+        //private void InitializationOfTimer()
+        //{
+        //    timer = new DispatcherTimer();
+        //    timer.Interval = TimeSpan.FromSeconds(5);
+        //    timer.Tick += Timer_Tick;
+        //    timer.Start();
+        //}
+
+
+
+
+
+
+        //private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        //{
+        //    if (!isUserActive)
+        //    {
+        //        timer.Start();
+        //        videoPlayer.Stop();
+
+        //    }
+        //    isUserActive = true;
+        //    // Show the buttons
+        //    btnExit.Visibility = Visibility.Visible;
+        //    btnOptions.Visibility = Visibility.Visible;
+        //    btnShop.Visibility = Visibility.Visible;
+        //    btnPlay.Visibility = Visibility.Visible;
+        //    btnProfile.Visibility = Visibility.Visible;
+        //    btnHelp.Visibility = Visibility.Visible;
+
+        //    // Hide the video player
+        //    videoPlayer.Visibility = Visibility.Collapsed;
+
+        //    // Pause the video playback
+        //    videoPlayer.Pause();
+        //}
+
+
+
+
         private void btnPointerEntered(object sender, PointerRoutedEventArgs e)
         {
             // Change the image source when hovering over the button
@@ -77,8 +189,9 @@ namespace Arcanoid
             Frame.Navigate(typeof(SignInUpPage));
         }
     }
+}
     
 
-}
+
 
 
