@@ -204,6 +204,11 @@ namespace Arcanoid
         {
             Frame.Navigate(typeof(LevelsPage));
         }
+        private void btnOptions_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SettingsPage));
+        }
+
     }
 }
     

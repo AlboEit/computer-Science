@@ -83,7 +83,7 @@
         
         <TextBlock x:Name="textBlock" Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="7" FontSize="20"/>
         
-        <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnOptions" Grid.Column="0" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnOptions_Click">
             <Image Source="/Assets/Buttons/Options (1).png"></Image>
         </Button>
         <Button x:Name="btnShop" Grid.Column="1" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">

@@ -128,6 +128,9 @@
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SignInUpPage.xaml.cs">
       <DependentUpon>SignInUpPage.xaml</DependentUpon>
     </Compile>
@@ -368,6 +371,7 @@
     <Content Include="Assets\Buttons\Upload %282%29.png" />
     <Content Include="Assets\Buttons\Upload %283%29.png" />
     <Content Include="Assets\Buttons\Upload %284%29.png" />
+    <Content Include="Assets\Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3" />
     <Content Include="GameManPageLogo.png" />
     <Content Include="NumbersImages\1.png" />
     <Content Include="NumbersImages\2.png" />
@@ -396,6 +400,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
