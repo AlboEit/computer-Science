@@ -209,6 +209,10 @@ namespace Arcanoid
             Frame.Navigate(typeof(SettingsPage));
         }
 
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HelpPage));
+        }
     }
 }
     

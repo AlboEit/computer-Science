@@ -96,7 +96,7 @@
         <Button x:Name="btnProfile" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited"  Click="btnProfile_Click">
             <Image Source="/Assets/Buttons/Profile (1).png"></Image>
         </Button>
-        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="7" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnHelp" Grid.Column="7" Grid.Row="7" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnHelp_Click">
             <Image Source="/Assets/Buttons/Help (1).png"></Image>
         </Button>
         <Button x:Name="btnLevelList" Grid.Column="7" Grid.Row="6" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnLevelList_Click">
