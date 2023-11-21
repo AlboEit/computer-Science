@@ -102,6 +102,8 @@
         <Button x:Name="btnLevelList" Grid.Column="7" Grid.Row="6" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnLevelList_Click">
             <Image Source="/Assets/Buttons/LevelList (1).png"></Image>
         </Button>
+        <TextBlock Text="Homo koksinel" FontSize="90" Grid.ColumnSpan="10" 
+                   Grid.RowSpan="10" HorizontalAlignment="Center"/>
         <Page x:Name="ExitPopUp" Grid.Column="5" Opacity="0.8" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="5" Visibility="Collapsed">
             <Grid>
                 <Grid Background="DarkGray" CornerRadius="30" BorderThickness="5" BorderBrush="Black">

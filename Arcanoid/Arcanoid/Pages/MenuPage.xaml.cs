@@ -154,6 +154,7 @@ namespace Arcanoid
                 }
             }
         }
+        
 
         private void btnPointerExited(object sender, PointerRoutedEventArgs e)
         {
