@@ -90,7 +90,7 @@
             <Image Source="/Assets/Buttons/Shop (1).png"></Image>
         </Button>
 
-        <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited">
+        <Button x:Name="btnPlay" Grid.Column="7" Grid.Row="4" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnPlay_Click">
             <Image Source="/Assets/Buttons/Play (1).png"></Image>
         </Button>
         <Button x:Name="btnProfile" Grid.Column="7" Grid.Row="5" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited"  Click="btnProfile_Click">

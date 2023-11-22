@@ -214,6 +214,11 @@ namespace Arcanoid
         {
             Frame.Navigate(typeof(HelpPage));
         }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(GamePage));
+        }
     }
 }
     

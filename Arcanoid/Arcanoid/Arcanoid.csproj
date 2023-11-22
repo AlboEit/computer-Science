@@ -122,6 +122,9 @@
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HelpPage.xaml.cs">
       <DependentUpon>HelpPage.xaml</DependentUpon>
     </Compile>
@@ -374,7 +377,7 @@
     <Content Include="Assets\Buttons\Upload %282%29.png" />
     <Content Include="Assets\Buttons\Upload %283%29.png" />
     <Content Include="Assets\Buttons\Upload %284%29.png" />
-    <Content Include="Assets\Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3" />
+    <Content Include="Assets\Music\Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3" />
     <Content Include="GameManPageLogo.png" />
     <Content Include="NumbersImages\1.png" />
     <Content Include="NumbersImages\2.png" />
@@ -395,6 +398,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="ConfirmationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -425,9 +432,7 @@
       <Name>GameEngine</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Music\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
