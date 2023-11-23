@@ -9,80 +9,35 @@ using Windows.UI.Xaml.Media.Animation;
 
 namespace GameEngine.GameServices
 {
-    public  class MusicPlayer
+    public static class MusicPlayer
     {
-        private static MediaPlayer _mediaplayer = new MediaPlayer();
-        private static bool _isOn = false;
-        private static double _volume = 100; // Initial volume
 
-        public static bool IsOn
+        private static MediaPlayer _BackgroundMusic;
+        public static bool IsPlaying { get; set; } = true;
+        public static double Volume { get; set; } = 70;
+
+        public static void LoadMusicPlayer(string filename)
         {
-            get { return _isOn; }
-            set
-            {
-                _isOn = value;
-                UpdatePlaybackState();
-            }
+            _BackgroundMusic = new MediaPlayer();
+            _BackgroundMusic.Volume = Volume;
+            _BackgroundMusic.AutoPlay = true;
+            _BackgroundMusic.IsLoopingEnabled = true;
+            _BackgroundMusic.Source = MediaSource.CreateFromUri(new Uri($"ms-appx:///Assets/Music/{filename}.mp3"));
         }
-
-        public static double Volume
+        public static void Play()
         {
-            get { return _volume; }
-            set
-            {
-                _volume = value;
-                if (_mediaplayer != null)
-                {
-                    _mediaplayer.Volume = value / 100;
-                }
-            }
+            IsPlaying = true;
+            _BackgroundMusic.Play();
         }
-
-        private static void UpdatePlaybackState()
+        public static void Pause()
         {
-            if (_mediaplayer.PlaybackSession != null)
-            {
-                if (_isOn)
-                {
-                    _mediaplayer.Play();
-                }
-                else
-                {
-                    _mediaplayer.Pause();
-                }
-            }
+            IsPlaying = false;
+            _BackgroundMusic.Pause();
         }
-
-        public static void Play(string fileName)
-        {
-            _mediaplayer.IsLoopingEnabled = true;
-            _mediaplayer.Source = MediaSource.CreateFromUri(new Uri($"ms-appx:///Assets/Music/{fileName}"));
-
-            if (_mediaplayer.PlaybackSession != null && _mediaplayer.PlaybackSession.PlaybackState == MediaPlaybackState.Playing)
-            {
-                // If music is already playing, update the playback state
-                UpdatePlaybackState();
-            }
-            else if (_isOn)
-            {
-                // Start playing only if the IsOn flag is true
-                _mediaplayer.Play();
-            }
-        }
-
-        public static void Stop()
-        {
-            _isOn = false;
-            _mediaplayer.Pause();
-        }
-
         public static void ChangeVolume(double volume)
         {
-            _volume = volume * 100;
-            if (_mediaplayer != null)
-            {
-                _mediaplayer.Volume = volume;
-            }
+            Volume = volume;
+            _BackgroundMusic.Volume = volume / 100;
         }
     }
 

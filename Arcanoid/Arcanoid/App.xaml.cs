@@ -25,11 +25,11 @@ namespace Arcanoid
     /// </summary>
     sealed partial class App : Application
     {
-        public static MusicPlayer MusicPlayer { get;  } = new MusicPlayer();
 
         public App()
         {
             this.InitializeComponent();
+            MusicPlayer.LoadMusicPlayer("Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped]");
             this.Suspending += OnSuspending;
         }
 

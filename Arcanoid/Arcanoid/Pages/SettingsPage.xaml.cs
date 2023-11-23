@@ -26,29 +26,20 @@ namespace Arcanoid.Pages
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
-        MediaPlayer player;
-        bool playing;
+        
         public SettingsPage()
         {
             this.InitializeComponent();
-            player = new MediaPlayer(); 
-            playing = false;
+            VolumeSlider.Value = MusicPlayer.Volume;
+            MusicToggle.IsOn = MusicPlayer.IsPlaying;
+            VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
+            MusicToggle.Toggled += MusicToggle_Toggled;
+
+
 
 
         }
-        private void SettingsPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            // This method is called when the SettingsPage is loaded
-
-            // Set the state as needed
-            GameEngine.GameServices.MusicPlayer.IsOn = true;
-
-            // Play music only if IsOn is true
-            if (GameEngine.GameServices.MusicPlayer.IsOn)
-            {
-                GameEngine.GameServices.MusicPlayer.Play("YourMusicFileName.mp3");
-            }
-        }
+        
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
@@ -86,11 +77,10 @@ namespace Arcanoid.Pages
         }
         private void VolumeSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (player != null)
-            {
-                // Adjust the volume based on the slider value
-                MusicPlayer.ChangeVolume(VolumeSlider.Value / 100);
-            }
+           
+            
+            // Adjust the volume based on the slider value
+            MusicPlayer.ChangeVolume(VolumeSlider.Value);
         }
 
 
@@ -118,78 +108,45 @@ namespace Arcanoid.Pages
 
         private void MusicToggle_Toggled(object sender, RoutedEventArgs e)
         {
-            MusicPlayer.IsOn = MusicToggle.IsOn;
+           
 
             if (MusicToggle.IsOn)
             {
-                MusicPlayer.Play("Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3");
+                MusicPlayer.Play();
             }
             else
             {
-                MusicPlayer.Stop();
+                MusicPlayer.Pause();
             }
         }
 
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
+       
+
+        
+
+        //private void RestoreState()
+        //{
+        //    //// Restore the MusicPlayer state
+        //    //// Use the same storage mechanism as in SaveState()
+
+        //    //Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+        //    //// Restore IsOn state
+        //    //if (localSettings.Values.ContainsKey("MusicPlayerIsOn"))
+        //    //{
+        //    //    MusicPlayer.IsOn = (bool)localSettings.Values["MusicPlayerIsOn"];
+        //    //}
+
+        //    //// Restore Volume state
+        //    //if (localSettings.Values.ContainsKey("MusicPlayerVolume"))
+        //    //{
+        //    //    MusicPlayer.Volume = (double)localSettings.Values["MusicPlayerVolume"];
+        //    //}
+
+        //    // Update the UI based on the restored state
            
-
-            // Save the state before navigating away
-            SaveState();
-            base.OnNavigatedFrom(e);
-        }
-
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            // Restore the state when navigating back
-            RestoreState();
-
-          
-        }
-
-
-        private void SaveState()
-        {
-            // Save the MusicPlayer state, e.g., IsOn and Volume
-            // You may use local settings, session state, or other storage mechanisms
-            // For simplicity, let's use ApplicationData.LocalSettings in this example
-
-            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            // Save IsOn state
-            localSettings.Values["MusicPlayerIsOn"] = MusicPlayer.IsOn;
-
-            // Save Volume state
-            localSettings.Values["MusicPlayerVolume"] = MusicPlayer.Volume;
-        }
-
-        private void RestoreState()
-        {
-            // Restore the MusicPlayer state
-            // Use the same storage mechanism as in SaveState()
-
-            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            // Restore IsOn state
-            if (localSettings.Values.ContainsKey("MusicPlayerIsOn"))
-            {
-                MusicPlayer.IsOn = (bool)localSettings.Values["MusicPlayerIsOn"];
-            }
-
-            // Restore Volume state
-            if (localSettings.Values.ContainsKey("MusicPlayerVolume"))
-            {
-                MusicPlayer.Volume = (double)localSettings.Values["MusicPlayerVolume"];
-            }
-
-            // Update the UI based on the restored state
-            MusicToggle.IsOn = MusicPlayer.IsOn;
-            VolumeSlider.Value = MusicPlayer.Volume;
-        }
+        //}
 
     }
 }
