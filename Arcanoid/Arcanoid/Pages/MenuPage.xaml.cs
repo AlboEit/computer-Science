@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using GameEngine.GameServices;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -184,40 +185,48 @@ namespace Arcanoid
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             ExitPopUp.Visibility = Visibility.Visible;
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnReturnClick(object sender, RoutedEventArgs e)
         {
             ExitPopUp.Visibility = Visibility.Collapsed;
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnQuitClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SignInUpPage));
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnLevelList_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(LevelsPage));
+            SoundsPlayer.Play("buttonClick.mp3");
         }
         private void btnOptions_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SettingsPage));
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(HelpPage));
+            SoundsPlayer.Play("buttonClick.mp3");
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(GamePage));
+            SoundsPlayer.Play("buttonClick.mp3");
         }
     }
 }

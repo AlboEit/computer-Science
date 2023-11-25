@@ -69,6 +69,7 @@
                     <Viewbox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="5"  Margin="10" >
                         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
                             <ToggleSwitch x:Name="MusicToggle" > </ToggleSwitch>
+                            <ToggleSwitch x:Name="EffectsToggle"   ></ToggleSwitch>
                             <Slider x:Name="VolumeSlider" Minimum="0" Maximum="100"  />
 
                         </StackPanel>

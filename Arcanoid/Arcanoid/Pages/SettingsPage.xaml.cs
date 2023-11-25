@@ -34,6 +34,8 @@ namespace Arcanoid.Pages
             MusicToggle.IsOn = MusicPlayer.IsPlaying;
             VolumeSlider.ValueChanged += VolumeSlider_ValueChanged;
             MusicToggle.Toggled += MusicToggle_Toggled;
+            EffectsToggle.IsOn = SoundsPlayer.IsOn;
+            EffectsToggle.Toggled += EffectsToggle_Toggled;
 
 
 
@@ -85,26 +87,7 @@ namespace Arcanoid.Pages
 
 
 
-        //private async void PlayPauseButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets");
-        //    Windows.Storage.StorageFile file = await folder.GetFileAsync("Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3");
-
-        //    player.AutoPlay = false;
-        //    player.Source = MediaSource.CreateFromStorageFile(file);
-
-        //    if (playing)
-        //    {
-        //        player.Source = null;
-        //        playing = false;
-
-        //    }
-        //    else { 
-        //        player.Play(); 
-        //        playing = true; 
-        //    }
-
-        //}
+       
 
         private void MusicToggle_Toggled(object sender, RoutedEventArgs e)
         {
@@ -120,33 +103,9 @@ namespace Arcanoid.Pages
             }
         }
 
-
-       
-
-        
-
-        //private void RestoreState()
-        //{
-        //    //// Restore the MusicPlayer state
-        //    //// Use the same storage mechanism as in SaveState()
-
-        //    //Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-        //    //// Restore IsOn state
-        //    //if (localSettings.Values.ContainsKey("MusicPlayerIsOn"))
-        //    //{
-        //    //    MusicPlayer.IsOn = (bool)localSettings.Values["MusicPlayerIsOn"];
-        //    //}
-
-        //    //// Restore Volume state
-        //    //if (localSettings.Values.ContainsKey("MusicPlayerVolume"))
-        //    //{
-        //    //    MusicPlayer.Volume = (double)localSettings.Values["MusicPlayerVolume"];
-        //    //}
-
-        //    // Update the UI based on the restored state
-           
-        //}
-
+        private void EffectsToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            SoundsPlayer.IsOn =EffectsToggle.IsOn;
+        }
     }
 }
