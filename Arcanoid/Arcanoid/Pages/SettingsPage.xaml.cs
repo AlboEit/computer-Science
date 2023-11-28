@@ -45,7 +45,7 @@ namespace Arcanoid.Pages
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MenuPage));
+            Frame.GoBack();
 
         }
         private void btnPointerEntered(object sender, PointerRoutedEventArgs e)

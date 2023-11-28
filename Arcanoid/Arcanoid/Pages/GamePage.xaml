@@ -41,8 +41,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-
+            
         </Grid.ColumnDefinitions>
+        <Image x:Name="Heart2" Source="/Assets/Heart.gif" Grid.Column="1" Grid.Row="0" Visibility="Visible"/>
+        <Image x:Name="Heart1" Source="/Assets/Heart.gif" Grid.Column="0" Grid.Row="0" Visibility="Visible"/>
+        <Image x:Name="Heart3" Source="/Assets/Heart.gif" Grid.Column="2" Grid.Row="0" Visibility="Visible"/>
+
+
         <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>
         </Button>

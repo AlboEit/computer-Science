@@ -31,6 +31,8 @@ namespace Arcanoid
             this.InitializeComponent();
             MusicPlayer.LoadMusicPlayer("Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped]");
             this.Suspending += OnSuspending;
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+            Console.Write("And im like hey wassap hellooooooo");
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -47,7 +49,7 @@ namespace Arcanoid
             {
                 rootFrame.Navigate(typeof(MenuPage), e.Arguments);
             }
-
+            
             Window.Current.Activate();
         }
 

@@ -377,6 +377,7 @@
     <Content Include="Assets\Buttons\Upload %282%29.png" />
     <Content Include="Assets\Buttons\Upload %283%29.png" />
     <Content Include="Assets\Buttons\Upload %284%29.png" />
+    <Content Include="Assets\Heart.gif" />
     <Content Include="Assets\Music\Kahoot Phonk theme song 1 Hour [FULL VERSION, Looped].mp3" />
     <Content Include="Assets\Sounds\buttonClick.mp3" />
     <Content Include="GameManPageLogo.png" />
