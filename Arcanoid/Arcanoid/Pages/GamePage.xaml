@@ -5,9 +5,11 @@
     xmlns:local="using:Arcanoid.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:GameServices ="using:Arcanoid.GameServices"
     mc:Ignorable="d"
+    
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
     <Grid>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/BackgroundImage.jpg" />
@@ -46,7 +48,9 @@
         <Image x:Name="Heart2" Source="/Assets/Heart.gif" Grid.Column="1" Grid.Row="0" Visibility="Visible"/>
         <Image x:Name="Heart1" Source="/Assets/Heart.gif" Grid.Column="0" Grid.Row="0" Visibility="Visible"/>
         <Image x:Name="Heart3" Source="/Assets/Heart.gif" Grid.Column="2" Grid.Row="0" Visibility="Visible"/>
-
+        <Border Grid.Column="4" Background="White"  Grid.Row="3" Grid.RowSpan="6"  Grid.ColumnSpan="5" Opacity="0.3">
+            
+        </Border>  
 
         <Button x:Name="btnExit" Grid.Column="14" Grid.Row="0" Style="{StaticResource MyButtonStyle}" PointerEntered="btnPointerEntered" PointerExited="btnPointerExited" Click="btnExit_Click" x:Uid="1" >
             <Image x:Name="btnExitImage" Source="ms-appx:///Assets/Buttons/Exit (1).png" ></Image>

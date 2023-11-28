@@ -122,6 +122,9 @@
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameObjects\Brick.cs" />
+    <Compile Include="GameScene.cs" />
+    <Compile Include="GameServices\GameScene.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
