@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arcanoid.GameServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace Arcanoid.Pages
     /// </summary>
     public sealed partial class GamePage : Page
     {
+        private GameManager _gameManager;
         public GamePage()
         {
             this.InitializeComponent();
@@ -65,6 +67,11 @@ namespace Arcanoid.Pages
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(HelpPage));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _gameManager = new GameManager(scene);
         }
     }
 }

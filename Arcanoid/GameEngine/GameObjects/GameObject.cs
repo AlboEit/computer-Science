@@ -40,18 +40,21 @@ namespace Arcanoid.GameObjects
         /// <param name="filename"></param>
         /// <param name="collisional"></param>
         /// <param name="scene"></param>
-        protected GameObject( double placeX, double placeY, Image image, string filename, bool collisional, Scene scene)
+        protected GameObject( double placeX, double placeY, string filename,  Scene scene)
         {
             _X = placeX;
             _Y = placeY;
             _placeX = placeX;
             _placeY = placeY;
-            Image = image;
-            _filename = filename;
+            //Image = image;
+            //_filename = filename;
             _scene = scene;
+            Image = new Image();
+            SetImage(filename);
+            collide();
         }
 
-        public virtual void collide(GameObject gameObject) 
+        public virtual void collide() 
         {
             Canvas.SetLeft(Image, _X);
             Canvas.SetTop(Image, _Y);
@@ -59,7 +62,7 @@ namespace Arcanoid.GameObjects
         }
         protected void SetImage(string filename)
         {
-            Image.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{_filename}"));
+            Image.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{filename}"));
         }
 
         public virtual void init()

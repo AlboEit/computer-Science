@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="GameObjects\Brick.cs" />
     <Compile Include="GameScene.cs" />
+    <Compile Include="GameServices\GameManager.cs" />
     <Compile Include="GameServices\GameScene.cs" />
     <Compile Include="Pages\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
@@ -203,6 +204,7 @@
     <Content Include="Assets\App\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\App\Wide310x150Logo.scale-400.png" />
     <Content Include="Assets\BackgroundImage.jpg" />
+    <Content Include="Assets\Brick\jelly_green.png" />
     <Content Include="Assets\Buttons\Back %281%29.png" />
     <Content Include="Assets\Buttons\Back %282%29.png" />
     <Content Include="Assets\Buttons\Back %283%29.png" />
@@ -437,9 +439,7 @@
       <Name>GameEngine</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Brick\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

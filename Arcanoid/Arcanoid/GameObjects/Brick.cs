@@ -17,10 +17,10 @@ namespace Arcanoid.GameObjects
         }
         private BrickType _brickType;
 
-        public Brick(BrickType brickType, double placeX, double placeY, Image image, string filename, bool collisional, Scene scene) : base(placeX, placeY, image, filename, collisional, scene)
+        public Brick(BrickType brickType, double placeX, double placeY, Scene scene,double Width) : base(placeX, placeY, string.Empty, scene)
         {
             Image.Width = Width;
-            Image.Height = Height;
+            Image.Height = Width;
             _brickType = brickType;
             SetImage();
         }
@@ -30,7 +30,7 @@ namespace Arcanoid.GameObjects
             switch (_brickType)
             {
                 case BrickType.Green:
-                    base.SetImage("Assets/Brick/Brick_green.jpg");
+                    base.SetImage("Brick/jelly_green.png");
                     break;
                 case BrickType.Pink:
                     base.SetImage("Assets/Brick/Brick_Pink.jpg");
