@@ -62,5 +62,11 @@ namespace Arcanoid.GameObjects
             Image.Source = new BitmapImage(new Uri($"ms-appx:///Assets/{_filename}"));
         }
 
+        public virtual void init()
+        {
+            _X= _placeX;
+            _Y= _placeY;
+        }
+
     }
 }
