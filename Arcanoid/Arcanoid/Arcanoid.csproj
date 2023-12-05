@@ -204,7 +204,9 @@
     <Content Include="Assets\App\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\App\Wide310x150Logo.scale-400.png" />
     <Content Include="Assets\BackgroundImage.jpg" />
-    <Content Include="Assets\Brick\jelly_green.png" />
+    <Content Include="Assets\Brick\Brick_Green.png" />
+    <Content Include="Assets\Brick\Brick_Pink.png" />
+    <Content Include="Assets\Brick\Brick_Yellow.png" />
     <Content Include="Assets\Buttons\Back %281%29.png" />
     <Content Include="Assets\Buttons\Back %282%29.png" />
     <Content Include="Assets\Buttons\Back %283%29.png" />

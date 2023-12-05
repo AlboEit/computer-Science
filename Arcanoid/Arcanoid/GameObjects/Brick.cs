@@ -30,13 +30,13 @@ namespace Arcanoid.GameObjects
             switch (_brickType)
             {
                 case BrickType.Green:
-                    base.SetImage("Brick/jelly_green.png");
+                    base.SetImage("Brick/Brick_Green.png");
                     break;
                 case BrickType.Pink:
                     base.SetImage("Assets/Brick/Brick_Pink.jpg");
                     break;
                 case BrickType.Yellow:
-                    base.SetImage("Assets/Brick/Brick_yellow.jpg");
+                    base.SetImage("Assets/Brick/Brick_Yellow.jpg");
                     break;
             }
         }
