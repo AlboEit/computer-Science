@@ -20,7 +20,7 @@ namespace Arcanoid.GameObjects
         {
             _speed = speed;
             Image.Height = 20;
-            Image.Width = Width;
+            Image.Width = width;
             Image.Stretch = Windows.UI.Xaml.Media.Stretch.Fill;
 
             Manager.gameEvent.OnKeyDown +=KeyDown ;
