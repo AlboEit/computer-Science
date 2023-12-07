@@ -51,10 +51,10 @@ namespace Arcanoid.GameObjects
             _scene = scene;
             Image = new Image();
             SetImage(filename);
-            collide();
+            Render();
         }
 
-        public virtual void collide() 
+        public virtual void Render() 
         {
             Canvas.SetLeft(Image, _X);
             Canvas.SetTop(Image, _Y);

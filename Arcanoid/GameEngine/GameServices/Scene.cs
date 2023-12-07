@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Documents;
 
 namespace GameEngine.GameServices
 {
@@ -15,7 +16,12 @@ namespace GameEngine.GameServices
 
         public double Ground { get; set; }
 
-        public Scene() { }
+        public Scene() 
+        {
+            Manager.gameEvent.OnRun += Run;
+        }
+        public void Run()
+        { }
 
         public void init() 
         {

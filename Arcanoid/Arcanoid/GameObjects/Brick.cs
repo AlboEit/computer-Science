@@ -23,6 +23,7 @@ namespace Arcanoid.GameObjects
             Image.Height = Width;
             _brickType = brickType;
             SetImage();
+            
         }
 
         private void SetImage()
