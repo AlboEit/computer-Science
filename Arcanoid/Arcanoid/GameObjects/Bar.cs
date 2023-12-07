@@ -19,7 +19,7 @@ namespace Arcanoid.GameObjects
         public Bar(Scene scene, string fileName , double speed , int width , double placeX , double placeY) : base(placeX, placeY, fileName, scene)
         {
             _speed = speed;
-            Image.Height = 20;
+            Image.Height = 25;
             Image.Width = width;
             Image.Stretch = Windows.UI.Xaml.Media.Stretch.Fill;
 
