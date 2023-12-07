@@ -24,6 +24,9 @@ namespace Arcanoid.GameServices
             var brick = new Brick(Brick.BrickType.Green,200,200, Scene,300);
             Scene.AddObject(brick);
 
+            var bar = new Bar(Scene, "/Assets/Bar/Bar.png", speed: 3, width: 160, Scene.ActualWidth/2 - 80, Scene.Ground);
+            Scene.AddObject(bar);
+
         }
     }
 }

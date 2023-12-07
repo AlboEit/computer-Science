@@ -1,4 +1,5 @@
 ﻿using Arcanoid.GameObjects;
+using GameEngine.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,15 @@ namespace GameEngine.GameServices
             Manager.gameEvent.OnRun += Run;
         }
         public void Run()
-        { }
+        {
+            foreach (var obj in _gameObjects)
+            {
+                if (obj is GameMovingObject)
+                {
+                    obj.Render();
+                }
+            }
+        }
 
         public void init() 
         {

@@ -122,6 +122,7 @@
     <Compile Include="ConfirmationPage.xaml.cs">
       <DependentUpon>ConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameObjects\Bar.cs" />
     <Compile Include="GameObjects\Brick.cs" />
     <Compile Include="GameScene.cs" />
     <Compile Include="GameServices\GameManager.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Assets\App\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\App\Wide310x150Logo.scale-400.png" />
     <Content Include="Assets\BackgroundImage.jpg" />
+    <Content Include="Assets\Bar\Bar.png" />
     <Content Include="Assets\Brick\Brick_Green.png" />
     <Content Include="Assets\Brick\Brick_Pink.png" />
     <Content Include="Assets\Brick\Brick_Yellow.png" />

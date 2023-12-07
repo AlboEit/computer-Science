@@ -72,6 +72,7 @@ namespace Arcanoid.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _gameManager = new GameManager(scene);
+            _gameManager.Start();
         }
     }
 }
