@@ -25,7 +25,7 @@ namespace Arcanoid.GameServices
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 19; j++)
-                    Scene.AddObject(new Brick(Scene, Brick.BrickType.Green, 80, j * 80, i * 80));
+                    Scene.AddObject(new Brick(Scene, Brick.BrickType.Green, 200, j * 200, i * 200));
             }
             var platfrom = new Bar(Scene, "Bar/Bar.png", 0.5, 725, 700);
             Scene.AddObject(platfrom);

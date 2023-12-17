@@ -19,8 +19,8 @@ namespace Arcanoid.GameObjects
 
          public Brick(Scene scene , BrickType brickType, double width, double placeX, double placeY) : base(scene, string.Empty, placeX, placeY)
         {
-            Image.Width = Width;
-            Image.Height = Width;
+            Image.Width = width;
+            Image.Height = width;
             _brickType = brickType;
             SetImage();
             
