@@ -9,7 +9,7 @@ namespace GameEngine.GameServices
     public static class Constans
     {
         public const int SpeedUnit = 10;
-        public const int RunInterval = 100;
+        public const int RunInterval = 1;
 
         public enum GameState
         {

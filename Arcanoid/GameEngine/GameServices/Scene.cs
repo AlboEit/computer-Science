@@ -19,7 +19,7 @@ namespace GameEngine.GameServices
 
         public Scene() 
         {
-            Manager.gameEvent.OnRun += Run;
+            Manager.GameEvent.OnRun += Run;
         }
         public void Run()
         {

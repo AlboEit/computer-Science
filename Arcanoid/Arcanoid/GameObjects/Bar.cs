@@ -13,59 +13,72 @@ namespace Arcanoid.GameObjects
 {
     internal class Bar:GameMovingObject
     {
-        public double dX => _X;
-        public double _speed;
-
-        public Bar(Scene scene, string fileName , double speed , int width , double placeX , double placeY) : base(placeX, placeY, fileName, scene)
+        public double dX => _dX;
+        private double _speed;
+        /// <summary>
+        /// הפעולה בונה עצם פךטפורמה
+        /// </summary>
+        /// <param name="scene">במת המשחק</param>
+        /// <param name="fileName"> שם הקובץ של הפלטפורמה </param>
+        /// <param name="speed"> מהירות אופקית </param>
+        /// <param name="placeX"> מיקום היווצרות בציר אופקי </param>
+        /// <param name="PlaceY"> מיקום היווצרות בציר אנכי </param>
+        public Bar(Scene scene, String fileName, double speed, double placeX, double PlaceY) :
+            base(scene, fileName, placeX, PlaceY)
         {
             _speed = speed;
-            Image.Height = 25;
-            Image.Width = width;
-            Image.Stretch = Windows.UI.Xaml.Media.Stretch.Fill;
 
-            Manager.gameEvent.OnKeyDown +=KeyDown ;
-            Manager.gameEvent.OnKeyUp+= KeyUp;
-
+            // כך הפךטפורמה נרשמת לאירועים הקשורים למקלדת
+            Manager.GameEvent.OnKeyDown += HandleKeyDown;
+            Manager.GameEvent.OnKeyUp += HandleKeyUp;
         }
-
-
-        /// <summary>
-        /// באמצעות הפעולה הזאת המחבט מגיב לעזיבת המקש
-        /// </summary>
-        /// <param name="key">המקש שנעזב</param>
-        /// <exception cref="NotImplementedException"></exception>
-        private void KeyUp(VirtualKey key)
+        public double Get_X()
+        {
+            return _X;
+        }
+        public double Get_Y()
+        {
+            return _Y;
+        }
+        public double GetWidth()
+        {
+            return Width;
+        }
+        private void HandleKeyUp(VirtualKey key)
         {
             switch (key)
             {
                 case VirtualKey.Left:
                 case VirtualKey.Right:
-                    Stop() ; break;
+                    Stop();
+                    break;
             }
         }
 
-        private void KeyDown(VirtualKey key)
+        private void HandleKeyDown(VirtualKey key)
         {
             switch (key)
             {
                 case VirtualKey.Left:
-                    MoveTo(int.MinValue,_Y,_speed,0) ; break;
+                    MoveTo(int.MinValue, _Y, _speed);
+                    break;
                 case VirtualKey.Right:
-                    MoveTo(int.MaxValue, _Y, _speed, 0); break;
+                    MoveTo(int.MaxValue, _Y, _speed);
+                    break;
             }
         }
-        public override void Render()//מתבצעת על הזמן
+
+        public override void Render()
         {
             base.Render();
-            if (_X <+ 0)
-            { 
+            if (_X <= 0)
+            {
                 _X = 0;
                 Stop();
-
             }
-            else if (_X>=_scene?.ActualWidth-Width)//כאשר תגע עם הצד הימני שלך בקיר הימני של הזירה 
+            else if (_X >= _scene?.ActualWidth - Width)
             {
-                _X =_scene.ActualWidth- Width;
+                _X = _scene.ActualWidth - Width;
                 Stop();
             }
         }

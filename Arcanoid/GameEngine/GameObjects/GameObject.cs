@@ -40,14 +40,14 @@ namespace Arcanoid.GameObjects
         /// <param name="filename"></param>
         /// <param name="collisional"></param>
         /// <param name="scene"></param>
-        protected GameObject( double placeX, double placeY, string filename,  Scene scene)
+        protected GameObject(Scene scene, string filename, double placeX, double placeY)
         {
             _X = placeX;
             _Y = placeY;
             _placeX = placeX;
             _placeY = placeY;
-            //Image = image;
-            //_filename = filename;
+            Image = new Image();
+            _filename = filename;
             _scene = scene;
             Image = new Image();
             SetImage(filename);

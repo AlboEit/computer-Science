@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
@@ -25,87 +26,81 @@ namespace GameEngine.GameServices
     public abstract class Manager
     {
         public Scene Scene { get; private set; }
-        public static DispatcherTimer _runTimer;//הטיימר יפעיל ללא הפסקה אירוע OnRun
-        public static GameEvent gameEvent { get; } = new GameEvent();
+        private static DispatcherTimer _runTimer;
 
+        public static GameEvent GameEvent { get; } = new GameEvent();
 
         public static GameState GameState { get; set; } = GameState.Loaded;
-
-
-        public Manager(Scene scene) 
+        public Manager(Scene scene)
         {
             Scene = scene;
+
             if (_runTimer == null)
             {
                 _runTimer = new DispatcherTimer();
                 _runTimer.Interval = TimeSpan.FromMilliseconds(Constans.RunInterval);
-                _runTimer.Tick += _runTimer_Tick; ;
+                _runTimer.Tick += _runTimer_Tick;
                 _runTimer.Start();
-                
             }
-            //כף נרשמים לשימוש במיקלדת
-            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown; ;
+            // כך נרשמים לאירוע במקלדת
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
             Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
         }
 
         private void CoreWindow_KeyUp(CoreWindow sender, KeyEventArgs args)
         {
-            if (gameEvent.OnKeyUp!= null) 
+            if (GameEvent.OnKeyUp != null)
             {
-                gameEvent.OnKeyUp(args.VirtualKey);
+                GameEvent.OnKeyUp(args.VirtualKey);
             }
         }
 
         private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
         {
-            if (gameEvent.OnKeyDown != null)
+            if (GameEvent.OnKeyDown != null)
             {
-                gameEvent.OnKeyDown(args.VirtualKey);
+                GameEvent.OnKeyDown(args.VirtualKey);
             }
         }
-        public void Start() 
+
+        /// <summary>
+        ///OnRun הפעוךה מתבצעת בתדירות מסויימת ללא הפסקה ומדליקה אירוע בשם 
+        /// </summary>
+        private void _runTimer_Tick(object sender, object e)
         {
-            Scene.init();
-            _runTimer.Start();
+            if (GameEvent.OnRun != null)
+            {
+                GameEvent.OnRun();
+            }
+        }
+        public void Start()
+        {
+            Scene.init(); // החזרת כל האובייקטים למיקומם ההתחלתי
+            _runTimer.Start(); // OnRun הפעולה מפעילה אירוע ללא הפסקה
+            //_clockTimer.Start();
             GameState = GameState.Started;
         }
-
-        public void pause() 
+        public void Pause()
         {
             _runTimer.Stop();
+            //_clockTimer.Stop();
             GameState = GameState.Paused;
         }
-        public void Resume() 
+        public void Resume()
         {
             _runTimer.Start();
+            //_clockTimer.Start();
             GameState = GameState.Started;
         }
-
-
-        public static bool GameOver()
+        public bool GameOver()
         {
             if (GameState != GameState.GameOver)
             {
                 GameState = GameState.GameOver;
                 _runTimer.Stop();
                 return true;
-
-
             }
             return false;
-        }
-
-        /// <summary>
-        /// הפעןלה מתבצעת בדירות מסוימת ללא הפסקה ומדליקה אירוע בשם OnRun
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _runTimer_Tick(object sender, object e)
-        {
-            if(gameEvent.OnRun!=null)
-            {
-                gameEvent.OnRun();
-            }
         }
     }
 }

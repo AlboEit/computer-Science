@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 
 namespace Arcanoid.GameServices
@@ -21,12 +22,16 @@ namespace Arcanoid.GameServices
         private void Init()
         {
             Scene.RemoveAllObject();
-            var brick = new Brick(Brick.BrickType.Green,200,200, Scene,300);
-            Scene.AddObject(brick);
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 19; j++)
+                    Scene.AddObject(new Brick(Scene, Brick.BrickType.Green, 80, j * 80, i * 80));
+            }
+            var platfrom = new Bar(Scene, "Bar/Bar.png", 0.5, 725, 700);
+            Scene.AddObject(platfrom);
 
-            var bar = new Bar(Scene, "Bar/Bar.png", speed: 3, width: 200, Scene.ActualWidth/2 - 100,800);
-            Scene.AddObject(bar);
 
+           
         }
     }
 }
