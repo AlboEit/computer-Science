@@ -48,7 +48,7 @@
         <Image x:Name="Heart2" Source="/Assets/Heart.gif" Grid.Column="1" Grid.Row="0" Visibility="Visible"/>
         <Image x:Name="Heart1" Source="/Assets/Heart.gif" Grid.Column="0" Grid.Row="0" Visibility="Visible"/>
         <Image x:Name="Heart3" Source="/Assets/Heart.gif" Grid.Column="2" Grid.Row="0" Visibility="Visible"/>
-        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="20"  Grid.Row="1" Grid.RowSpan="8"  Grid.ColumnSpan="15" Opacity="0.3">
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="20"  Grid.Row="1" Grid.RowSpan="8"  Grid.ColumnSpan="15" Opacity="1">
             <GameServices:GameScene x:Name="scene" Background="Transparent"></GameServices:GameScene>
         </Border>  
 

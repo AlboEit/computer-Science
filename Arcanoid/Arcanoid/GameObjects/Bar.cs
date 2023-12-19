@@ -11,10 +11,10 @@ using Windows.System;
 
 namespace Arcanoid.GameObjects
 {
-    internal class Bar:GameMovingObject
+    public class Bar:GameMovingObject
     {
         public double dX => _dX;
-        private double _speed;
+        public double _speed;
         /// <summary>
         /// הפעולה בונה עצם פךטפורמה
         /// </summary>
