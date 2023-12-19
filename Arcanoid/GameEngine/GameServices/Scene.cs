@@ -3,8 +3,11 @@ using GameEngine.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Calls.Background;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
 
@@ -17,6 +20,26 @@ namespace GameEngine.GameServices
 
         public double Ground { get; set; }
 
+
+
+
+
+        public void checkCollision()
+        {
+            foreach (var gameObject in _gameObjectSnapshot)
+            {
+                if (gameObject.Collisional)
+                {
+                    var otherObject = _gameObjectSnapshot.FirstOrDefault(g => !ReferenceEquals(g, gameObject) 
+                    && g.Collisional && !RectHelper.Intersect(g.Rect, gameObject.Rect).IsEmpty);
+                    if (otherObject != null)
+                    {
+                        gameObject.Collide(otherObject);
+                    }
+                }
+                
+            }
+        }
         public Scene() 
         {
             Manager.GameEvent.OnRun += Run;

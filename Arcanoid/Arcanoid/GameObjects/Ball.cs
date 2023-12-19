@@ -7,6 +7,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.System;
+using Windows.UI.Xaml;
 
 namespace Arcanoid.GameObjects
 {
@@ -81,5 +82,33 @@ namespace Arcanoid.GameObjects
                 _dY *= -1;  // Reverse the vertical speed
             }
         }
+        public override void Collide(GameObject g)
+        {
+            if(g is Bar bar)
+            {
+                _dY = -_dY;
+                if (Math.Abs(bar.dX) > 0)
+                { 
+                _dX += bar.dX/5;
+                }
+                _Y = bar.Rect.Top - Height;
+            }
+            if (g is Brick brick)
+            {
+                var intersectRect = RectHelper.Intersect(Rect, brick.Rect);
+                if (intersectRect.Height > intersectRect.Width)
+                {
+                    _X -= _dX;
+                    _dX = -_dX;
+                }
+                else// touch horizontal sides 
+                {
+                    _Y -= _dY;
+                    _dY = -_dY;
+                }
+                brick.ChangeBrick(g);
+            }
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Arcanoid.GameObjects
@@ -69,6 +70,9 @@ namespace Arcanoid.GameObjects
         {
             _X= _placeX;
             _Y= _placeY;
+        }
+        public virtual void Collide(GameObject g)
+        { 
         }
 
     }

@@ -41,5 +41,8 @@ namespace Arcanoid.GameObjects
                     break;
             }
         }
+
+        public void ChangeBrick(GameObject g)
+        { }
     }
 }
