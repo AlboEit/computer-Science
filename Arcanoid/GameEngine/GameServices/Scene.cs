@@ -43,6 +43,7 @@ namespace GameEngine.GameServices
         public Scene() 
         {
             Manager.GameEvent.OnRun += Run;
+            Manager.GameEvent.OnRun += checkCollision;
         }
         public void Run()
         {

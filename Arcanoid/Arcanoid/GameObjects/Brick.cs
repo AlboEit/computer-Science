@@ -43,6 +43,19 @@ namespace Arcanoid.GameObjects
         }
 
         public void ChangeBrick(GameObject g)
-        { }
+        {
+            switch (_brickType)
+            { 
+                case BrickType.Yellow:
+                    _brickType=BrickType.Green;
+                    break;
+                case BrickType.Pink:
+                    _brickType = BrickType.Yellow;
+                    break; 
+                case BrickType.Green:
+                    _scene.RemoveObject(this);
+                    return;
+            }
+        }
     }
 }

@@ -32,6 +32,7 @@ namespace Arcanoid.GameServices
 
             var ball = new Ball(Scene, "Ball/Ball.png", speed: 0.5, 910,620, 20);
             Scene.AddObject(ball);
+            
 
 
 

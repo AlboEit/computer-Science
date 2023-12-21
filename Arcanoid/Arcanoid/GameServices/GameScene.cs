@@ -9,5 +9,6 @@ namespace Arcanoid.GameServices
 {
     public class GameScene:Scene
     {
+        public int h = 0;
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation.Metadata;
 using Windows.System;
 using Windows.UI.Xaml;
 
@@ -59,41 +60,56 @@ namespace Arcanoid.GameObjects
                     MoveTo(int.MaxValue, _Y, _initialSpeed);
                     break;
                 case VirtualKey.Up:
-                    init();break;
+                    init();
+                    break;
             }
         }
 
 
 
 
+        //public override void Render()
+        //{
+        //    // Render the base object
+
+        //    // Check if the ball has hit the left or right boundary of the scene
+        //    if (_X >= _scene?.ActualWidth - Width || _X <= 0)
+        //    {
+        //        _dX *= -1;  // Reverse the horizontal speed
+
+        //    }
+        //    // Check if the ball has hit the top or bottom boundary of the scene
+        //    else if (_Y >= _scene?.ActualHeight - Height || _Y <= 0)
+        //    {
+        //        _dY *= -1;  // Reverse the vertical speed
+        //    }
+        //    base.Render();
+        //}
         public override void Render()
         {
-            base.Render();  // Render the base object
+            if (_X >= _scene?.ActualWidth - Width || _X <= 0) {
+                _dX *= -1;
 
-            // Check if the ball has hit the left or right boundary of the scene
-            if (_X >= _scene?.ActualWidth - Width || _X <= 0)
-            {
-                _dX *= -1;  // Reverse the horizontal speed
-               
             }
-            // Check if the ball has hit the top or bottom boundary of the scene
-            else if (_Y >= _scene?.ActualHeight - Height || _Y <= 0)
-            {
-                _dY *= -1;  // Reverse the vertical speed
+            else if (_Y >= _scene?.ActualHeight - Height || _Y <= 0) {
+                _dY *= -1;
             }
+            base.Render();
         }
-        public override void Collide(GameObject g)
+
+        public override void Collide(GameObject gameObject)
         {
-            if(g is Bar bar)
+            if (gameObject is Bar platform)
             {
                 _dY = -_dY;
-                if (Math.Abs(bar.dX) > 0)
-                { 
-                _dX += bar.dX/5;
+
+                if (Math.Abs(platform.dX) > 0)
+                {
+                    _dX += platform.dX / 2.6;
                 }
-                _Y = bar.Rect.Top - Height;
+                _Y = platform.Rect.Top - Height;
             }
-            if (g is Brick brick)
+            if (gameObject is Brick brick)
             {
                 var intersectRect = RectHelper.Intersect(Rect, brick.Rect);
                 if (intersectRect.Height > intersectRect.Width)
@@ -101,12 +117,12 @@ namespace Arcanoid.GameObjects
                     _X -= _dX;
                     _dX = -_dX;
                 }
-                else// touch horizontal sides 
+                else
                 {
                     _Y -= _dY;
                     _dY = -_dY;
                 }
-                brick.ChangeBrick(g);
+                brick.ChangeBrick(gameObject);
             }
         }
 
