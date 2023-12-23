@@ -34,10 +34,10 @@ namespace Arcanoid.GameObjects
                     base.SetImage("Brick/Brick_Green.png");
                     break;
                 case BrickType.Pink:
-                    base.SetImage("Assets/Brick/Brick_Pink.jpg");
+                    base.SetImage("Brick/Brick_Pink.png");
                     break;
                 case BrickType.Yellow:
-                    base.SetImage("Assets/Brick/Brick_Yellow.jpg");
+                    base.SetImage("Brick/Brick_Yellow.png");
                     break;
             }
         }
@@ -48,9 +48,11 @@ namespace Arcanoid.GameObjects
             { 
                 case BrickType.Yellow:
                     _brickType=BrickType.Green;
+                    SetImage();
                     break;
                 case BrickType.Pink:
                     _brickType = BrickType.Yellow;
+                    SetImage();
                     break; 
                 case BrickType.Green:
                     _scene.RemoveObject(this);
