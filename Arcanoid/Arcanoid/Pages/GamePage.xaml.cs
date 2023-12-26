@@ -1,4 +1,5 @@
 ﻿using Arcanoid.GameServices;
+using GameEngine.GameServices;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -73,6 +74,18 @@ namespace Arcanoid.Pages
         {
             _gameManager = new GameManager(scene);
             _gameManager.Start();
+            Manager.GameEvent.OnRemoveHeart += RemoveHeart;
+        }
+
+        private void RemoveHeart(int lifes)
+        {
+           Image[] hearts = new Image[3];
+            hearts[0] = Heart1;
+            hearts[1] = Heart2;
+            hearts[2] = Heart3;
+            if(lifes>0)
+                hearts[lifes].Visibility = Visibility.Collapsed;
+
         }
     }
 }

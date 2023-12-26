@@ -1,4 +1,5 @@
-﻿using GameEngine.GameObjects;
+﻿using Arcanoid.Pages;
+using GameEngine.GameObjects;
 using GameEngine.GameServices;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,10 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation.Metadata;
+using Windows.Perception.People;
 using Windows.System;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Arcanoid.GameObjects
 {
@@ -16,11 +19,14 @@ namespace Arcanoid.GameObjects
     {
         private double _initialSpeed;   // Initial speed of the ball
         private Vector2 _speed;         // Current speed vector of the ball
-        public Bar _bar;                 
+        public Bar _bar;
+        private int _countLives;
+        
         public Ball(Scene scene, String fileName, double speed, double PlaceX, double PlaceY, double width) :
             base(scene, fileName, PlaceX, PlaceY)
         {
             _initialSpeed = speed;
+            _countLives = 2;
             base.Image.Width = width;
             base.Image.Height = width;
             //MoveTo(0, int.MaxValue, _initialSpeed);
@@ -91,8 +97,17 @@ namespace Arcanoid.GameObjects
                 _dX *= -1;
 
             }
-            else if (_Y >= _scene?.ActualHeight - Height || _Y <= 0) {
+            else if (_Y <= 0) {
                 _dY *= -1;
+            }
+            else if(_Y >= _scene?.ActualHeight - Height)
+            {
+                Stop();
+                init();
+                if (Manager.GameEvent.OnRemoveHeart != null)
+                {
+                    Manager.GameEvent.OnRemoveHeart(--_countLives);
+                }
             }
             base.Render();
         }
