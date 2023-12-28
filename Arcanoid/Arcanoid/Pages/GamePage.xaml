@@ -68,10 +68,9 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Score: 30"   FontSize="60" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="3" >
-                        
+                    <TextBlock x:Name="txtScore" Text="{x:Bind Score, Mode=OneWay}" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="3">
                     </TextBlock>
-                   
+
 
                 </Grid>
             </Grid>

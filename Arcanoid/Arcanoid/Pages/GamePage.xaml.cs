@@ -25,6 +25,19 @@ namespace Arcanoid.Pages
     /// </summary>
     public sealed partial class GamePage : Page
     {
+        private int _score;
+
+
+        public int Score
+        {
+            get { return _score; }
+            set
+            {
+                _score = value;
+                // Update the UI or perform other actions when the score changes
+                txtScore.Text = $"Score: {_score}";
+            }
+        }
         private GameManager _gameManager;
         public GamePage()
         {
@@ -43,6 +56,14 @@ namespace Arcanoid.Pages
                     Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Hand, 1);
                 }
             }
+        }
+        
+
+        private void UpdateScore(int score)
+        {
+            // Handle the score update here if needed
+            // For example, you can update the UI or perform other actions
+            Score = score;
         }
 
         private void btnPointerExited(object sender, PointerRoutedEventArgs e)
@@ -79,6 +100,8 @@ namespace Arcanoid.Pages
             _gameManager = new GameManager(scene);
             _gameManager.Start();
             Manager.GameEvent.OnRemoveHeart += RemoveHeart;
+            // Subscribe to the OnUpdateScore event
+            Manager.GameEvent.OnUpdateScore += UpdateScore;
         }
 
         private void RemoveHeart(int lifes)

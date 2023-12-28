@@ -23,7 +23,28 @@ namespace Arcanoid.GameObjects
         private Vector2 _speed;         // Current speed vector of the ball
         public Bar _bar;
         private int _countLives;
-        private int _score;
+        public int _score;
+        // Add these lines to the Ball class
+        public int Score
+        {
+            get { return _score; }
+            set
+            {
+                _score = value;
+                // You can add additional logic here if needed
+                // For example, updating the score display in the UI
+                if (Manager.GameEvent.OnUpdateScore != null)
+                {
+                    Manager.GameEvent.OnUpdateScore(_score);
+                }
+            }
+        }
+
+        public void AddScore()
+        {
+            Score += _addedScore;
+        }
+
         private const int _addedScore = 50;
         
         public Ball(Scene scene, String fileName, double speed, double PlaceX, double PlaceY, double width) :
@@ -45,7 +66,6 @@ namespace Arcanoid.GameObjects
             Manager.GameEvent.OnKeyUp += HandleKeyUp;
             base.init();
             _scene.init();
-            MoveTo(0, int.MinValue);
 
             
         }
@@ -150,6 +170,7 @@ namespace Arcanoid.GameObjects
                     _dY = -_dY;
                 }
                 brick.ChangeBrick(gameObject);
+                AddScore();
             }
         }
 

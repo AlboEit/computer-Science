@@ -15,5 +15,7 @@ namespace GameEngine.GameServices
         public Action <VirtualKey> OnKeyDown;// האירוע שמי שירשם אליו יוכל להגיב לעזיבת הלחץ
         public Action<VirtualKey> OnKeyUp;// האירוע שמי שירשם אליו יוכל להגיב לליחצת הלחץ    }
         public Action<int> OnRemoveHeart;
+        public Action<int> OnUpdateScore;
+
     }
 }
