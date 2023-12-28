@@ -68,7 +68,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Score: 38" FontSize="60" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="3" >
+                    <TextBlock Text="Score: 30"   FontSize="60" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="3" >
                         
                     </TextBlock>
                    

@@ -69,6 +69,10 @@ namespace Arcanoid.Pages
         {
             Frame.Navigate(typeof(HelpPage));
         }
+        private void addScore() 
+        {
+
+        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -83,9 +87,10 @@ namespace Arcanoid.Pages
             hearts[0] = Heart1;
             hearts[1] = Heart2;
             hearts[2] = Heart3;
-            if(lifes>0)
+            if (lifes >=0)
+            {
                 hearts[lifes].Visibility = Visibility.Collapsed;
-
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Arcanoid.GameObjects;
+using DataBase.Models;
 using GameEngine.GameServices;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace Arcanoid.GameServices
 {
     public  class GameManager : Manager
     {
+        public static User User { get; set; } = new User();
         
         public GameManager(Scene scene) : base(scene)
         {
             Init();
+            User.level = Pages.LevelsPage.level;
         }
 
         private void Init()

@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using Windows.Foundation.Metadata;
 using Windows.Perception.People;
 using Windows.System;
+using Windows.UI.WebUI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.Web.UI;
 
 namespace Arcanoid.GameObjects
 {
@@ -21,12 +23,16 @@ namespace Arcanoid.GameObjects
         private Vector2 _speed;         // Current speed vector of the ball
         public Bar _bar;
         private int _countLives;
+        private int _score;
+        private const int _addedScore = 50;
         
         public Ball(Scene scene, String fileName, double speed, double PlaceX, double PlaceY, double width) :
             base(scene, fileName, PlaceX, PlaceY)
         {
             _initialSpeed = speed;
-            _countLives = 2;
+            _countLives = 3;
+            _score = 0;
+
             base.Image.Width = width;
             base.Image.Height = width;
             //MoveTo(0, int.MaxValue, _initialSpeed);
@@ -35,10 +41,13 @@ namespace Arcanoid.GameObjects
         }
         public  void init()
         {
+            Manager.GameEvent.OnKeyDown += HandleKeyDown;
+            Manager.GameEvent.OnKeyUp += HandleKeyUp;
+            base.init();
+            _scene.init();
             MoveTo(0, int.MinValue);
 
-            Manager.GameEvent.OnKeyDown -= HandleKeyDown;
-            Manager.GameEvent.OnKeyUp -= HandleKeyUp;
+            
         }
 
 
@@ -66,7 +75,10 @@ namespace Arcanoid.GameObjects
                     MoveTo(int.MaxValue, _Y, _initialSpeed);
                     break;
                 case VirtualKey.Up:
-                    init();
+                    
+                    Manager.GameEvent.OnKeyDown -= HandleKeyDown;
+                    Manager.GameEvent.OnKeyUp -= HandleKeyUp;
+                    MoveTo(0, int.MinValue);
                     break;
             }
         }

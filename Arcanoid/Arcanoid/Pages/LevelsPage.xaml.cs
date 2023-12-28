@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace Arcanoid.Pages
     /// </summary>
     public sealed partial class LevelsPage : Page
     {
+        public static Level level = new Level();
         public LevelsPage()
         {
             this.InitializeComponent();
@@ -34,6 +36,11 @@ namespace Arcanoid.Pages
             if (sender is Image tappedImage)
             {
                 string strForMessage = tappedImage.Name.Substring(3);
+                int number = Convert.ToInt32(strForMessage);
+                level.Levelnumber = number;
+                level.BarWidth = 600/number;
+                level.Ballspeed = number;
+                
                 Frame.Navigate(typeof(MenuPage), $"You are in level number {strForMessage}");
             }
         }
