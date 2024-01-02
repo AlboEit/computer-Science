@@ -225,7 +225,7 @@ namespace Arcanoid
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GamePage));
+            Frame.Navigate(typeof(LevelsPage));
             SoundsPlayer.Play("buttonClick.mp3");
         }
     }

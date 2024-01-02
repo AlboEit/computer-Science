@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -11,6 +12,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
@@ -42,7 +44,17 @@ namespace Arcanoid.Pages
         public GamePage()
         {
             this.InitializeComponent();
+            Manager.GameEvent.OnWin += OnWin;
         }
+
+        private void OnWin(int brickcount)
+        {
+            if (brickcount <= 0)
+            {
+                GameWonPopUp.Visibility= Visibility.Visible;
+            }
+        }
+
         private void btnPointerEntered(object sender, PointerRoutedEventArgs e)
         {
             // Change the image source when hovering over the button

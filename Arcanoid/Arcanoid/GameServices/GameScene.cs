@@ -1,4 +1,5 @@
-﻿using GameEngine.GameServices;
+﻿using Arcanoid.GameObjects;
+using GameEngine.GameServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Arcanoid.GameServices
 {
     public class GameScene:Scene
     {
-        public int h = 0;
+        public int BrickCount => _gameObjectSnapshot.Count(x => x is Brick);
     }
 }

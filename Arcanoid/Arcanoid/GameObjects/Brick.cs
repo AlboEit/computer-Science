@@ -56,8 +56,11 @@ namespace Arcanoid.GameObjects
                     break; 
                 case BrickType.Green:
                     _scene.RemoveObject(this);
+                    if (Manager.GameEvent.OnWin != null)
+                        Manager.GameEvent.OnWin(((GameServices.GameScene)_scene).BrickCount);
                     return;
             }
+            
         }
     }
 }

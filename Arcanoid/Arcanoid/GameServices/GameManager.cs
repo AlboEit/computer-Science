@@ -19,31 +19,35 @@ namespace Arcanoid.GameServices
         
         public GameManager(Scene scene) : base(scene)
         {
-            Init();
             User.level = Pages.LevelsPage.level;
+            Init();
         }
 
         private void Init()
         {
-            string[] colors = { "Green", "Yellow", "Pink" };
-            Scene.RemoveAllObject();
-            Random random = new Random();
+            List<int> colors = Enumerable.Range(0, User.level.CountYellowJelly).Select(_ => 2)
+           .Concat(Enumerable.Range(0, User.level.CountPinkJelly).Select(_ => 1))
+           .Concat(Enumerable.Range(0, User.level.CountGreenJelly).Select(_ => 0))
+           .ToList();
 
-            for (int i = 0; i < 5; i++)
+            Random rng = new Random();
+            colors = colors.OrderBy(x => rng.Next()).ToList();
+
+            for (int i = 0, c = 0; i < 3; i++)
             {
-                for (int j = 0; j < 19; j++)
+                for (int j = 0; j < 10; j++)
                 {
-                    string randomColor = colors[random.Next(colors.Length)];
-                    Brick.BrickType brickType = (Brick.BrickType)Enum.Parse(typeof(Brick.BrickType), randomColor);
-
-                    Scene.AddObject(new Brick(Scene, brickType, 80, j * 80, i * 80));
+                    Scene.AddObject(new Brick(Scene, (Brick.BrickType)colors[c], 120, j * 120, i * 120));
+                    c++;
                 }
             }
 
-            var bar = new Bar(Scene, "Bar/Bar.png", 0.5, 725, 650);
+
+
+            var bar = new Bar(Scene, "Bar/Bar.png", 1, Scene.ActualWidth / 2 - (User.level.BarWidth / 2), 650, User.level.BarWidth);
             Scene.AddObject(bar);
 
-            var ball = new Ball(Scene, "Ball/Ball.png", speed: 0.5, 910,620, 20);
+            var ball = new Ball(Scene, "Ball/Ball.png", speed: User.level.BallSpeed, Scene.ActualWidth / 2 - 13, 620, 20);
             Scene.AddObject(ball);
             
 

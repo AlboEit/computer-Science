@@ -8,12 +8,12 @@ namespace DataBase.Models
 {
     public class Level
     {
-        public int id { get; set; } 
-        public double Ballspeed{ get; set; }
-        public int Levelnumber{ get; set; }
+        public int Id { get; set; }
+        public int LevelNumber { get; set; }
+        public double BallSpeed { get; set; }
         public int BarWidth { get; set; }
-        public int CountGreenBrick{ get; set; }
-        public int CountYellowBrick { get; set;}
-        public int CountPinkBrick { get; set;}
+        public int CountGreenJelly { get; set; }
+        public int CountPinkJelly { get; set; }
+        public int CountYellowJelly { get; set; }
     }
 }

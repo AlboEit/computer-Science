@@ -23,9 +23,10 @@ namespace Arcanoid.GameObjects
         /// <param name="speed"> מהירות אופקית </param>
         /// <param name="placeX"> מיקום היווצרות בציר אופקי </param>
         /// <param name="PlaceY"> מיקום היווצרות בציר אנכי </param>
-        public Bar(Scene scene, String fileName, double speed, double placeX, double PlaceY) :
+        public Bar(Scene scene, String fileName, double speed, double placeX, double PlaceY,double Width) :
             base(scene, fileName, placeX, PlaceY)
         {
+            Image.Width = Width;
             _speed = speed;
 
             // כך הפךטפורמה נרשמת לאירועים הקשורים למקלדת

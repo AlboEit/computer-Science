@@ -20,7 +20,7 @@ namespace Arcanoid.GameObjects
     public class Ball : GameMovingObject
     {
         private double _initialSpeed;   // Initial speed of the ball
-        private Vector2 _speed;         // Current speed vector of the ball
+        private double _speed;         // Current speed vector of the ball
         public Bar _bar;
         private int _countLives;
         public int _score;
@@ -50,7 +50,8 @@ namespace Arcanoid.GameObjects
         public Ball(Scene scene, String fileName, double speed, double PlaceX, double PlaceY, double width) :
             base(scene, fileName, PlaceX, PlaceY)
         {
-            _initialSpeed = speed;
+            _initialSpeed = 1;
+            _speed = speed;
             _countLives = 3;
             _score = 0;
 
@@ -98,7 +99,7 @@ namespace Arcanoid.GameObjects
                     
                     Manager.GameEvent.OnKeyDown -= HandleKeyDown;
                     Manager.GameEvent.OnKeyUp -= HandleKeyUp;
-                    MoveTo(0, int.MinValue);
+                    MoveTo(0, int.MinValue,_speed);
                     break;
             }
         }
